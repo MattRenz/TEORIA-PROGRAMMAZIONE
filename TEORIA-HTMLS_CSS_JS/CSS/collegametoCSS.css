@@ -1,0 +1,39 @@
+table, th, td {
+    border: 0.01cm solid black;
+    padding: 5px;
+    }
+    thead{
+        background-color: grey;
+    }
+
+    input{
+        font-size: medium;
+    }
+
+
+#main{
+    color: green;
+    font-size: 36px;
+    font-style: italic;
+    }
+
+#main:hover{
+    color: green;
+    font-size: 38px;
+    font-style: italic;
+}
+
+#conteiner{
+    margin: 50px;
+    border-style: dashed;
+    border-color: grey;
+    width: 100px;
+    height: 100px;
+}
+
+.box{
+    padding: 10px;
+    border: solid 2px blue;
+    width:  100px;
+    height: 100px;
+}
