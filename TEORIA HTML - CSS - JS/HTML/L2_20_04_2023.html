@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 2 20/04/2023</title>
+    <link rel="stylesheet" href="./CSS/L2_20_04_2023.css">
+
+
+</head>
+<body>
+    
+    <!-- Tabelle -->
+
+    <table .table>
+        <tr><th>Prima riga</th>
+            <td>Colonna 2</td>
+            <td>Colonna 3</td>
+        </tr>  
+
+        <tr><th>Seconda riga</th>
+            <td>Colonna 2</td>
+            <td>Colonna 3</td>
+        </tr>
+
+        <tr><th>Terza riga</th>
+            <td>COlonna 2</td>
+            <td>Colonna 3</td>
+        </tr>
+    </table>
+<hr>
+
+    <!-- Esercizo, crea una tabella -->
+    <table>
+            <thead>
+                <tr>
+                    <th>Auto</th><th>Modello</th><th>Prezzo</th>
+                </tr> 
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td id="Auto1">Porsche</td><td>GT3-RS</td><td>120.000€</td>
+                 </tr>
+                 <tr>
+                     <td>Colonna 1</td><td>Colonna 2</td><td>Colonna 3</td>
+                 </tr>
+                 <tr>
+                     <td>Colonna 1</td><td>Colonna 2</td><td>Colonna 3</td>
+                 </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th colspan="3">Totale: 3 Rrighe</th>
+                </tr>
+            </tfoot>
+
+
+    </table>
+<hr>
+    <!-- FORM TEORIA-->
+    <p>
+        L'elemento <code>forme</code> crea un tipo di blocco che può contenere elementi figli <br>
+        L'elemento <code>form</code> ha due metodi importanti <code>method</code> e <code>action</code>
+    </p>
+    <form>
+        <label>
+            <!-- Invio dati del form -->
+            <button type="submit">Bottone</button> <br>
+            <h4>Testo</h4>
+            <input type="text"> <br>
+            <h4>Range</h4>
+            <input type="range"> <br>
+            <h4>Password</h4>
+            <input type="password"> <br>
+            <h3>Checkbox</h3>
+            <input type="checkbox"> <br>
+
+            <input type="date"> <br>
+            <input type="datetime-local"> <br>
+            <input type="email"> <br>
+            <input type="file"> <br>
+            <input type="image"> <br>
+            <input type="month"> <br>
+            <input type="number"> <br>
+            <input type="radio"> <br>
+            <input type="range"> <br>
+            <input type="reset"> <br>
+            <input type="search"> <br>
+            <input type="tel"> <br>
+            <input type="time"> <br>
+            <input type="url"> <br>
+            <input type="week"> <br>
+
+        </label>
+    </form>
+
+    <!-- Esercizio crea un form nin HTML per registrare un nuovo utente. Il form deve richiedere i seguenti dati: 
+        Nome, Cognome, Email, Password, conferma password, Data di nascita, Genere (maschile o femminile), interessi (musica, sport, cinema, arte, letteratura)
+    -->
+
+    <hr>
+
+    <center><h3>Registrazione nuovo utente</h3></center>
+
+    <form>
+
+        <label id="label1">
+            <p>Nome</p>
+            <input type="text">
+            <p>Cognome</p>
+            <input type="text">
+            <p>Email</p>
+            <input type="email">
+            <p>Password</p>
+            <input type="password">
+            <button>Conferma Password</button>
+            <p>Data di nascita</p>
+            <input type="date">
+            <p>Genere</p>
+            <input type="checkbox"> Maschio
+            <input type="checkbox"> Femmina
+            <input type="checkbox"> Non specificato
+            <p>Interessi</p>
+            <input type="text"> 
+            <br> <br>
+            <button type="submit">Invia dati</button>
+        </label>
+    </form>
+
+    <!-- CSS -->
+    <h1 id="main">Elemento modificato in CSS</h1>
+    <h1>Elemento non modificato in CSS</h1>
+    
+    <!-- Div con un conteiner con un margine di 50px, 
+        bordo trateggiato di colore grigio, e una lunghezza 
+        del 80% e un'altezza di 100pxl-->
+
+    <div id="conteiner"><div class="box"></div></div>
+
+</body>
+</html>

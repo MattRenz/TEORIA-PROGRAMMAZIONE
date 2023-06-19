@@ -1,0 +1,866 @@
+/*SELETTORI*/
+
+body{background-color:once;}  /*SELETTORE di tipo TAG */
+
+p{font-size: 14pt;}    /*SELETTORE DI TIPO TAG*/
+
+.testo-rosso {color: red;} /*SELETTORE di tipo Class*/
+#sfodno-nero {background-color: black;} /*SELETTORE DI TIPO ID*/
+
+
+/*PSEUDO-SELETTORI Animazioni*/
+#Titolo2:hover{color: brown;} /*Pseudo-Selettore di tipo HOVER, crea un animazione al passaggio del mouse*/
+
+/*PSEUDO-SELETTORE Liste: usato per le liste aggiungere una deteminata caratteristica SOLO a qulla riga (figlio 1, figlio 2 e cosi via)*/
+#lista li:nth-child(3) {color: darkgoldenrod;} /*Indica il numero precios di "figlio" cioè la riga corrispondente*/
+#lista li:first-child {color: darkgreen;} /*Primo figlio (prima riga)*/
+#lista li:last-child {color: darkorchid;} /*Ulitmo figlio (ultima riga)*/
+
+/*PSEUDO-SELETTORE Link: cambia il colore del link una volta che è stato visitato*/
+a:link {color: darkmagenta;} /*Colora di blue il link NON visitato*/
+a:visited {color: darkgoldenrod;} /*Colora di oro il link VISITATO*/
+
+
+/*SELETTORI AVANZATI*/
+
+/*1) La somma di più selettori (+)*/
+h1 + h2
+/*Colora di Viola SOLO gli h2 che vengono SEGUONO un h1*/
+
+/*2) Il gruppo di parentela (~)*/
+h1 ~ h3 {color: darkorange;}
+/*Stesso principio di prima colora tutti gli h3 che sono seguiti da un h1 MA se sono nello stesso gruppo nella stessa parentela*/
+
+/*3) Di diretta parentela*/
+#nav-2 > li {color: darkcyan;} /*Di diretta parentela di tutti i "discendenti di li SENZA UL*/
+
+#nav-2 > ol {color: gold;} /*Di diretta parentela di tutti i discendenti di ol*/
+
+#nav-2 li /*TUTTI i li*/
+
+
+/*SELETTORI PER ATTRIBUTO*/
+
+/*Attributo "titolo" tramite "name". In questo modo possiamo modificare il singolo elemento, in questo caso (h) si attiva con le parentesi quadre []*/
+
+p[name=testo]{color: red;}
+
+
+/*Attributi IMMAGINI, SELETTORE PER ATTRIBUTO*/
+
+img[src^="images/"]{border: px solid darkmagenta;} /*(^) intende tutti gli elementi SRC, (nomefile/) intende tutti gli elementi che iniziano con nomefile.*/
+
+
+img[src$=".png"] {border: 10px solid black;} /*($) intende tutti gli elementi SRC, che finiscono con l'estenzione (.png o .jpg) quindi $ si usa per identificare l'estenzione della foto*/
+
+
+img[src*="logo"]{border-color: blueviolet;} /*(*) andiamo a indicare che include da qualche parte quel valore o il nome che gli abbiamo dato */
+
+
+/*background-image*/
+
+/*body {background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20201010/pngtree-watercolor-gradient-yellow-orange-background-image_409268.jp);}
+
+/*E lo sfondo del nostro sito web. Tramite (ulr) gli diamo il link della fotografia preso da internet*/
+
+/*PROPRIETà Background-Image*/
+.bg-img{
+    height: 250px; /*Altezza*/
+    width: 350px;  /*Grandezza*/
+    background: url(data:image/jpeg;base64,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);
+    background-color: darkblue; /*Colore Sfondo*/
+    background-repeat: no-repeat; /*Ripetizione IMG (X, Y,)*/
+    background-position: center; /*Posiizone IMG (center, left, right)*/
+    background-size: cover; /*Grandezza IMG (tutta, stracciata)*/
+}
+
+/*Opacita e RGBA*/
+
+/*OPACITA*/
+.bg-img-opacity{
+    height: 250px;
+    width: 400px;
+    background: url(https://images6.alphacoders.com/103/thumb-350-1033511.jpg);
+    background-color: darkred;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.50; /*Opacita va da 0 a 1*/
+}
+/*RGBA*/
+.bg-div-opacity{
+    background: rgba(255, 230, 0, 0.7); /*oltre i colori c'è un 3 dato l'opacità in questo caso di 0.6*/
+    width: 570px;
+    height: 133px;
+    margin-left: 30%;
+    margin-bottom: 0px;
+}
+
+/*LINEAR e GRADIENT (linee e gradi)*/
+
+/*Linear*/
+.linear-gradient{
+    height: 320px;
+    width: 1500px;
+    background: linear-gradient(to right, #be0000, #f5f505); /*Sfumatura verso destra con colori rosso e giallo*/
+}
+
+/*Linear a 3 colori e 2 direzioni*/
+.linear-gradient2{
+    height: 320px;
+    width: 1500px;
+    background: linear-gradient(to right bottom, #be0000, orange, blue); /*Ha due direzioni quindi dall'alto verso il basso andando verso destra, e tre colori rosso arancione e blue*/
+}
+
+/*Gradi*/
+.gradi{
+    height: 320px;
+    width: 1500px;
+    background: linear-gradient(70deg, red, blue, pink);
+}
+
+
+/*Circolare*/
+.circle{
+    height: 350px;
+    width: 750px;
+    background: radial-gradient(circle, blue 5%, red 20% ,gold 75%);
+
+}
+
+/* ATTRIBUTI TESTO */
+p[name="testo_allineato_CENTRO"]  {text-align: center;} /* Testo allineato al CENTRO */
+
+p[name="testo_allineato_DESTRA"] {text-align: right;} /* Testo allineato a DESTRA */
+
+p [name="testo_allineato_JUSTIFY"] {text-align: justify;} /* Stessa lunghezza tra le linee */
+
+p[name="testo_MAIUSCOLE pirma parola"] {text-transform: capitalize;} /* Prima lettera MAIUSCOLA ogni parola */
+
+p[name="testo_MAIUSCOLO_tutto"] {text-transform: uppercase;} /* Testo tutto MAIUSCOLO */
+
+p[name="testo_tutto_minuscolo"] {text-transform: lowercase;} /* Testo TUTTO minuscolo */
+
+a[name="link_non_sottolineato"] {text-decoration: none; font-size: 16pt;}
+
+a[name="link_sottolineato_sopra"] {text-decoration: overline;}
+
+/* ATTRIBUTI FONT */
+
+p[name="grandezza_font"] {font-size: 1.8rem;} /* Grandezza Font (mm; cm; em misura stabile; rem 1 rem = 16px) */
+
+p[name="grandezza_font_weight"] {font-weight: 600;} /* bolder testo, va da 100 a 900. + bold o bolder */
+
+p[name="spazio_tra_linee"] {line-height: 1.7em;} /* Spazio tra le linee (em, pt, rem) */
+
+p[name="spazio_tra_le_parole"] {letter-spacing: 0.5rem;} /* Spazio tra le parole (REM, em, pt, px) */
+
+p[name="massima_larghezza_testo"] {max-width: 60ch;} /* Massima LARGHEZZA testo (unità di misura: ch) ci permette di non usare i <br> */
+
+p[name="tutto_in_maiuscolo_piccolo"] {font-variant: small-caps;} /* Trasforma tutto in maiuscolo piccolo */
+
+p[name="font_family"] {font-family: sans-serif;} /* Cambia il carattere, SERIF: di default; SAN-SERIF: più leggibile; MONOSPACE: ogni lettura occupa lo stesso spazio */
+
+/* Font GOOGLE */
+/* 1) Inserirlo dentro Head e specificare il nome su fontfamily */
+/* 2) O inserirlo direttamente dentro il file CSS*/
+
+
+p[name="font-style_italic"] {font-style: italic;} /* Font in corsivo */
+
+/* Padding Margin Border*/
+
+img[src*=pexels] {
+
+    border: 10px solid darkblue;/* Del bordo indicare: grandezza, tipo, e colore */
+
+    padding: 20px 25px; /* 2 Valori, il primo= Top-Bottom. il secondo= left-right. Possiamo indicare anche tutte e 4 i valori */
+
+    border-bottom: 10px dotted #002289; /* Possiamo agire sul singolo bordo, nella dimensione, colore, e tipo */
+
+    margin: 15px 20px; /* Stesso principio di padding 1° valore orizzontale, 2° valore verticale*/
+
+    border-radius: 20px; /* Bordi arrotondati si per bordi che per foto */
+}
+
+.container{
+    background-color:#be0000;
+    padding: 20px;
+    margin: 90px auto;
+    display: flex;
+    height: 300px;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.items{
+    font-weight: 600;
+    color: black;
+    width: 40px;
+    background-color:#f5f505;
+    padding: 12px 15px;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+
+.contenitore{
+height: 280px;
+background-color: aqua;
+display: flex;
+margin: 50px auto;
+padding: 25px;
+flex-direction: row; /* Direzione */
+flex-wrap: wrap; /* A capo */
+justify-content:space-around; /* Posizione Orizzontale e Spazio  */
+align-items: stretch; /* Posizione verticale e Allineamento */
+
+
+}
+
+
+.elementi{
+background-color: #f5f505;
+color: #be0000;
+font-family: sans-serif;
+font-weight: 700;
+text-align: center;
+padding: 18px;
+margin: 15px;
+border-radius: 8px;
+
+}
+
+/* .elemento-1{
+    display: flex;
+    gap: 30px;
+
+} */
+
+
+
+.grid-contenitore{
+    background-color: yellowgreen;
+    display: grid;
+    margin-top: 50px;
+    min-height: 300px;
+    height: 100%;
+    flex-wrap: wrap;
+    /* grid-template-columns: 50px 200px 120px; */      /* nm. Colonne in px */
+    /*grid-template-columns: 1fr 1fr 2fr;*/             /* nm. Colonne in frazione *
+    grid-template-columns: repeat(3, 1fr) ;             /* nm. Colonne in frazione ripetute  */
+
+    /* grid-template-rows: 200px 300px; */             /* nm. righe in px */
+    /*grid-template-rows: 1fr 2fr;*/                   /* nm. righe in frazione o in frazione ripetute */
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+
+    justify-content: space-evenly;
+}
+
+.grid-elementi{
+    color: black;
+    padding: 18px 36px;
+    font-size: 1.3em;
+    font-weight: 700;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    border-radius: 20px 5px;
+}
+
+
+
+.grid-contenitore .grid-elementi:nth-child(1){
+    background-color: green;
+}
+
+.grid-contenitore .grid-elementi:nth-child(2){
+    background-color: #00e07f;
+}
+
+.grid-contenitore .grid-elementi:nth-child(3){
+    background-color: blue;
+}
+
+.grid-contenitore .grid-elementi:nth-child(4){
+    background-color: red;
+}
+
+.grid-contenitore .grid-elementi:nth-child(5){
+    background-color: palevioletred;
+}
+
+.grid-contenitore .grid-elementi:nth-child(6){
+    background-color: magenta;
+}
+
+
+.contenitore-es{
+background-color: #002289;
+padding: 20px;
+display: grid;
+min-height: 350px;
+grid-template-columns: auto auto auto;
+grid-template-rows: auto auto;
+
+
+}
+
+.elementi-es{
+background-color: red;
+padding: 12px;
+margin: 15px 20px;
+font-family: sans-serif;
+color: black;
+font-weight: 700;
+border-radius: 12px 20px;
+width: 120px;
+height: 90px;
+}
+
+.contenitore-es .elementi-es:nth-child(ODD){
+    background-color: yellow;
+}
+
+
+#Es_Button{
+    padding: 0.825rem 2.25rem;
+    background-color: #1aff53;
+    border-radius: 20px;
+    color: #00001a;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: all 1s ease 8ms; /* all quali transizioni; Xs o ms il tempo di quanto dura la transizione; ease (e altri) l'accellerazione della transizione Xs o ms il ritardo dell'animazione */
+    transform: translate(8px, 10px); /* traslete 2 valori 1° asse X 2° asse Y */
+    transform: scale(1.5); /* Aumenta tutte le grandezze di 1.5 (in questo caso) */
+    transform: rotate(1deg) /* Ruota l'elemento (valore in gradi deg) */
+}
+
+.animazione:hover{
+    background-color: #66ff8c;
+    padding: 1.3rem 2.30rem;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+#header{
+    opacity: 0;
+    animation-name: nomeanimazione; /* Nome animazione */
+    animation-duration: 3s; /* Durata animazione */
+    animation-delay: 1s; /* Ritardo dell'animazione */
+    animation-fill-mode: forwards; /* Stati */
+    animation-direction: normal; /* Direzione animazione */
+    animation-timing-function: ease; /* Accellerazione */
+    animation-iteration-count: 1; /* Ripetizione animazione */
+    transform: translateX(400px);
+
+    /*Per riassumere tutto in un unica riga*/
+    /* animation: ; */
+
+
+    /* Per far si che le animazioni siano visibili su tutti i siti web si usano dei prefissi */
+
+    /*-WEBKIT-animation*/ /* Per Crhomw e Safari */
+    /*-MOZ-animation*/ /* Per mozilla */
+    /* -O-animation */ /* per opera*/
+}
+
+@keyframes nomeanimazione{
+    0%{opacity: 0; transform: translateX(400px);}
+
+    100%{opacity: 1; transform: translateX(0px);}
+} 
+
+
+
+
+.contenitore-1{
+    background-color: #00e07f;
+    display: grid;
+    padding: 15px;
+    min-height: 350px;
+    grid-template-columns: 1fr;
+}
+
+.elementi_test{
+    padding: 12px;
+    margin: 15px 20px;
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 12px 20px;
+    width: 45%;
+    height: 100px;  
+}
+
+
+#animazione-s{
+    opacity: 0;
+    animation-name: animazione-test; 
+    animation-duration: 3s; 
+    animation-delay: 1s; 
+    animation-fill-mode: forwards; 
+    animation-direction: normal; 
+    animation-timing-function: ease; 
+    animation-iteration-count: 1;
+    transform: translateX(800px);
+}
+
+@keyframes animazione-test{
+    0%{opacity: 0; transform: translateX(800px);}
+
+    100%{opacity: 1; transform: translateX(0px);}
+}
+
+
+#animazione-s1{
+    opacity: 0;
+    animation-name: animazione-test1; 
+    animation-duration: 3s; 
+    animation-delay: 1s; 
+    animation-fill-mode: forwards; 
+    animation-direction: normal; 
+    animation-timing-function: ease; 
+    animation-iteration-count: 1;
+    transform: translateX(1000px);
+}
+
+@keyframes animazione-test1{
+    0%{opacity: 0; transform: translateX(1000px);}
+
+    100%{opacity: 1; transform: translateX(0px);}
+}
+
+
+#animazione-s2{
+    opacity: 0;
+    animation-name: animazione-test2; 
+    animation-duration: 3s; 
+    animation-delay: 1s; 
+    animation-fill-mode: forwards; 
+    animation-direction: normal; 
+    animation-timing-function: ease; 
+    animation-iteration-count: 1;
+    transform: translateX(1400px);
+}
+
+@keyframes animazione-test2{
+    0%{opacity: 0; transform: translateX(1400px);}
+
+    100%{opacity: 1; transform: translateX(0px);}
+}
+
+.link-no{
+    text-decoration: none;
+}
+
+.elementi_test:nth-child(1){
+    background: linear-gradient(to right bottom, #77d2f7,#ffffff);
+    color: black;
+    font-size: 1.1em;
+    font-weight: 800;
+    font-family: sans-serif;
+}
+
+.elementi_test:nth-child(2){
+    background: linear-gradient(to right top, #fbba00,#970a2c);
+    color: black;
+    font-size: 1.1em;
+    font-weight: 800;
+    font-family: sans-serif;
+}
+
+.elementi_test:nth-child(3){
+    background: linear-gradient(to right bottom, black, #e21c2a);
+    font-size: 1.1em;
+    font-weight: 800;
+    font-family: sans-serif;
+    color: whitesmoke; 
+}
+
+
+#Button-asr{
+    padding: 0.825rem 2.25rem;
+    background: linear-gradient(to right, #fbba00, #970a2c);
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-family: sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 1s ease 8ms;
+}
+#Button-asr:hover{
+    padding: 0.925rem 2.70rem;
+    background: linear-gradient(to right, #ffff4d, #ff4d4d);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+
+#Button-ssl{
+    padding: 00.825rem 2.25rem;
+    background: linear-gradient(to right, white,#77d2f7);
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-family: sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 1s ease 8ms;
+    margin-left: 20px;
+}
+#Button-ssl:hover{
+    padding: 0.925rem 2.70rem;
+    background: linear-gradient(to right, white, #66ffff);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+
+#Button-int{
+    padding: 00.825rem 2.25rem;
+    background: linear-gradient(to right, #000000, #010E80);
+    border-radius: 20px;
+    font-size: 1.1em;
+    font-family: sans-serif;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 1s ease 8ms;
+    margin-left: 20px;
+    color: wheat;
+}
+#Button-int:hover{
+    padding: 0.925rem 2.70rem;
+    background: linear-gradient(to right, #262626, #1c32fd);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+*{                    /* Con l'asterisco si indica tutti gli elementi della pagina */
+    color: black;
+    font-size: 1.1em;
+}
+
+h1, h2 {  /* Separando gli elementi con una virogla possiamo modificarli iniseme */
+    font-size: 26pt;
+}
+
+
+.back-img{
+    width: 1700px;
+    height: 800px;
+    background-image: url(https://orgoglionerd.it/wp-content/uploads/2021/09/marvel-avengers-fase-4-dove-li-vedremo-min.jpg);
+    background-repeat: no-repeat; /* Ripetizione */
+    background-size: contain; /* Grandezza */
+    background-position: center; /* Posizione */
+    background-attachment: local; /* Scorrere o fissa */
+    background-color: red;
+}
+
+.border{
+    border-left: 4px solid blue;
+    background-color: cadetblue;
+    max-width: 20ch;
+    padding: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.outline{
+    outline: solid 6px green; /* Outline controno trascciato al di fuori degli elementi */
+    outline-offset: 10px; /* Spazio tra il controno e il bordo */
+    padding: 4px;
+    border: 3px solid red;
+    background-color: yellow;
+    max-width: 65ch;
+    margin-left: 20px;
+}
+
+.justify{
+    text-align: justify; /* Justiy ongi linea avrà la stessa lunghezza e saranno dritti */
+    max-width: 65ch;
+}
+
+.underline{
+    text-decoration: underline;  /* Tipo di linea */
+    text-decoration-color: red; /* Colore della linea */
+    text-decoration-style:double ; /* Style della linea */
+    text-decoration-thickness: 3px; /* Grandezza linea */
+}
+.line-throuht{
+    text-decoration: line-through;
+    text-decoration-color:green ;
+    text-decoration-style:dashed;
+}
+.overline{
+    text-decoration: overline;
+    text-decoration-color: blue;
+    text-decoration-style:wavy ;
+}
+
+.ombra{
+    text-shadow: 5px 5px 8px black; /* Testo Ombra */
+}
+
+body{
+    font-size: 100%; /* In questo modo mostra la stessa dimensione in tutti i browser */
+}
+
+.text-rid{
+    font-size: 5vw; /* Con vw indihiamo una grandezza che sarà ridimensionabile alla pagina */
+}
+
+.svg{
+    width: 90px;
+    height: 220px;
+}
+
+.svg-google{
+    width: 90px;
+    height: 220px;
+}
+
+
+
+table {
+    border-collapse: collapse; /* Unisce i bordi in modo univoco */
+    width: 100%; /* Indica tutta la grandezza */
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.overflow{
+    overflow: scroll; /* Aggiunge barre di scorrimento solo quando necessario. Auto sempre */
+    background-color: coral;
+    border: 3px solid black;
+    padding: 2px;
+    overflow: scroll;
+    width: 250px;
+    height: 120px;
+}
+
+.pdiv{
+    background-color: coral;
+}
+
+
+.ul{
+    list-style-type: none;
+    margin: 20px;
+    padding: 0;
+    overflow: hidden; /* Indica cosa succede se il contenuto supera il blocco  hidden sta che il contenuto in eccesso viene tagliato */
+    background-color: #333;  
+}
+
+
+ 
+.li{
+    /* float: left; */
+    display: inline-block; /* Permette al contenuto di portarsi all'intenro dell'elemento */
+    color: white;
+    text-align: center;
+    padding: 15px 22px;
+    text-decoration: none;  
+}
+
+.home{
+background-color: red;
+}
+
+.li:hover{
+    background-color: #111;
+}
+
+
+span.a {
+    display: inline; /* Display inline di deafult */
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 4px solid blue;  
+    background-color: yellow; 
+  }
+  
+  span.b {
+    display: inline-block; /*   Display inline-block */
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 4px solid blue;    
+    background-color: yellow; 
+  }
+  
+  span.c {
+    display: block; /* Display block */
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 4px solid blue;    
+    background-color: yellow; 
+  }
+
+  .img{
+    display: block;
+    width: 40%;
+    margin-left: auto; /* In questo modo l'imaggine è perfettamente centrata grazie ai margin-left e right che sono su auto */
+    margin-right: auto; 
+  }
+
+/* sopstare l'imaggine in modo diverso da margin */
+
+.right {
+    position: absolute; /* Con position:absolute possiamo farlo spostare a destra o sinistra come  margin */
+    left: 20px; /* Sarà spostato a sinistra di 20px */
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+div p{
+    background-color: yellow; /* Solo i paragrafi dentro div hanno lo sfondo giallo quindi i DISCENDENTI */
+    width: 33%;
+} 
+
+div > p{
+    background-color: yellow; /* > con questo indichiamo quelli di DIRETTA parentela, infatti solo i paragrafi che sono dentro un div sono colorati gli altri no */
+    width: 33%;
+}
+
+
+h4 + h5 {
+    background-color: yellow; /* Seleziona solo gli elemnti che sono dopo un altro elemento in questo caso SOLO colorerà di giallo solo gli H5 che vengono dopo un H4  */
+}
+
+
+a:link{
+    color: red;  /* Colore del link */
+}
+
+a:visited{
+    color: green; /* Colore del link vissitato */
+}
+
+a:active{
+    color: blue; /* Colore del link quando cliccato */
+}
+
+
+.pseudo-elementi::first-line{ /* frist-line modifica la prima linea del testo */
+    color: red;
+    font-weight: 600;
+    font-size: 1.3em;
+    text-align: justify;
+}
+
+.pseudo-elementi2::first-letter{ /* frist-letter modifica la prima lettera */
+    color: green;
+    font-size: 1.9em;
+    font-weight: 700;
+}
+
+.h4test:before{ /* Con before possiamo aggiungere qualcosa PRIMA quell'elemento */
+    content: url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Logo_AS_Roma_1960s.svg/400px-Logo_AS_Roma_1960s.svg.png);
+}
+
+.h4test2::after{ /* Con after possiamo aggiungere qualcosa DOPO quell'elemento */
+    content: url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Logo_AS_Roma_1960s.svg/400px-Logo_AS_Roma_1960s.svg.png);
+}
+
+
+::marker{ /* Marker permette di cambiare i marcatori, attenzione però cambia tutti i marcatori */
+    color: red;
+    font-family: 'Times New Roman';
+    font-weight: 800;
+    font-size: 1.5em;
+}
+
+.selection{
+    font-size: 1.3em;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+    line-height: 35px;
+}
+
+::selection{ /* selection farà diventare il testo una volta selezionato con uno sfondo giallo e un colore rosso */
+    background-color: yellow;
+    color: red;
+}
+
+
+.menu{ /* Questo è un menu standard */
+    list-style-type: none; /* 1) levare i marcatori */
+    padding: 0; 
+    margin: 0; /* portare padding e margin a 0 */
+}
+
+
+
+
+.menu2{ /* Questo è un menu standard orizzontale */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 200px;
+}
+
+.limenu2 a{
+    display: block; /* permette di rendere cliccabile l'intera area e non solo il testo */
+    text-decoration: none;
+    background-color: #f1f1f1;
+    padding: 4px 22px;
+    color: black;
+    font-size: 1.2em;
+    border-radius: 20px;
+    margin: 10px 2px;
+}
+.limenu2 a:hover:not(.active){
+    background-color: #555;
+    color: white;
+}
+
+
+.ul-orr{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+
+.li-orr a{
+    /* Ci sono 2 modi per fare i menu orizzontali */
+
+    float: left; /* Primo modo float: left; */
+    /*display: inline;*/ /* Secondo modo display: inline; */
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.li-orr a:hover{
+    background-color: #111;
+}
+
+
+
