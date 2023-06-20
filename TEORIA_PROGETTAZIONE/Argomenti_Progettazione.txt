@@ -27,6 +27,12 @@ Argomenti Progettazione:
 		Tipi di dato: tipi enumerativi UML
 		Tipi di dato composti UML
 		Vincoli di molteplicità sugli attributi
+		Relazioni is-a
+			Transitività
+			Generalizzazione
+			Generalizzazione {disjoint}
+			Generalizzazione {complete}
+			
 		
 		
 		
