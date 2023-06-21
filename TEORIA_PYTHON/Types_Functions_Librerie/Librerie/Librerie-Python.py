@@ -2,9 +2,30 @@
 import datetime
 x = dir(datetime)
 
+import subprocess # Consente di scrviere sul terminale tramite Pytonh
+
+# fornisce un'interfaccia per creare e gestire processi secondari (child process) 
+# all'interno di un programma Python. Consente di eseguire comandi di sistema, 
+# programmi esterni e comunicare con essi attraverso i flussi di input/output.
+
+    # Scrivere sul terminale da python 
+    
+output = subprocess.check_output(["ls", "-l"]) # comando 
+print(output.decode("utf-8"))  # Decodifica l'output byte in una stringa UTF-8 e stampa
+
+try:
+    output = subprocess.check_output(["command_does_not_exist"]) # Risposta comando
+except subprocess.CalledProcessError as e:
+    print("Errore durante l'esecuzione del comando:")
+    print("Codice di uscita:", e.returncode) 
+    print("Output di errore:", e.output.decode("utf-8")) # Risposta erroe comando
+
+    
+
+
+
 
 import pyperclip # Consente di copiare il contenuto di una stringa in memoira
-
 
 pyperclip.copy("Testo da copiare")
 

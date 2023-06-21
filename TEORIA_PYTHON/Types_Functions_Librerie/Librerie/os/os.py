@@ -40,3 +40,7 @@ os.path.realpath(__file__) # percorso assoluto del file corrente
 
 file_path = ""
 os.path.dirname(file_path) # percorso assoluto di una cartella in cui si trova un file specifico
+
+os.chdir(file_path) # Camia la directory corrente, cambia l'ambiente di lavoro del terminale 
+
+ 
