@@ -16,22 +16,31 @@ Argomenti Progettazione:
 		Diagramma degli stati e delle transizioni
 
 		Ogg. UML
-		Classe UML
-		Istanza di una classe UML
-		Associazione e link UML
-		Assocaizioni multiple tra classi UML
-		Vincoli di molteplicità UML
-		Assocaizione (link) con attributi (association class) UML
-		Tipo di dato: tipi base UML
-		Tipi di dato: tipi specializzati UML
-		Tipi di dato: tipi enumerativi UML
-		Tipi di dato composti UML
-		Vincoli di molteplicità sugli attributi
-		Relazioni is-a
-			Transitività
+		Diagramma delle Classi UML
+			Istanza di una classe UML
+			Associazione e link UML
+			Assocaizioni multiple tra classi UML
+			Vincoli di molteplicità UML
+			Assocaizione (link) con attributi (association class) UML
+			Tipo di dato: tipi base UML
+			Tipi di dato: tipi specializzati UML
+			Tipi di dato: tipi enumerativi UML
+			Tipi di dato composti UML
+			Vincoli di molteplicità sugli attributi
+			Relazioni is-a
+				Transitività
+				Generalizzazione
+				Generalizzazione {disjoint}
+				Generalizzazione {complete}
+		
+		Diagrammi use-case UML
+
+			attori e archi 
+			<<include>>
+			<<extend>>
 			Generalizzazione
-			Generalizzazione {disjoint}
-			Generalizzazione {complete}
+			Generalizzazione tra attori
+
 			
 		
 		
