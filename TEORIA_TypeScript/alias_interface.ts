@@ -31,16 +31,20 @@
         
         // Estenzioni interface
 
-        interface Studente {
+        interface Studente_scuola {
             nome: string,
             eta: number;
         }
 
-        interface MatricolaStudente extends Studente {
+        interface MatricolaStudente extends Studente_scuola {
             matricola: string;
         }
 
-        const my_studente : MatricolaStudente = {nome:"Matteo", eta: 20, matricola: "AK5FK3S"};
+        const my_studente : MatricolaStudente = {
+            nome: "Matteo",
+            eta: 20,
+            matricola: "AB57",
+        };
 
 
 

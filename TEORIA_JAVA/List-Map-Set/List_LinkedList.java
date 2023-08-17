@@ -5,6 +5,14 @@ import java.util.List;
 
 public class List_LinkedList {
 
+    /*
+     * Creare liste:
+     * 
+     * List<T> ...Arrays.asList();
+     * List<T> ...Arrays.List<>();
+     * LinkedList<T> ...LinkedList<>();
+     */
+
     public static void main(String[] args) {
 
         // ARRAYLIST
